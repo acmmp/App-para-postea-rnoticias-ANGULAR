@@ -6,6 +6,10 @@ import { OnInit } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms'; // Asegúrate de importar ReactiveFormsModule
 import { HttpClientModule } from '@angular/common/http';
 import { ArticleService } from './article.service';
+import { CommonModule } from '@angular/common';  // Importa CommonModule
+import { ArticlesComponent } from './articles/articles.component';
+
+import { RouterModule } from '@angular/router';  // Importa RouterModule
 
 
 
@@ -15,7 +19,7 @@ import { ArticleService } from './article.service';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent,ReactiveFormsModule, HttpClientModule],
+  imports: [RouterOutlet, HeaderComponent,ReactiveFormsModule, HttpClientModule, CommonModule, ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

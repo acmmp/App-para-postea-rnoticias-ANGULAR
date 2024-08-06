@@ -1,39 +1,21 @@
+// src/app/article.service.ts
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-
-interface Article {
-  id?: number;
-  title: string;
-  content: string;
-  category: string;
-}
 
 @Injectable({
   providedIn: 'root'
 })
 export class ArticleService {
-  private apiUrl = 'http://localhost:3000/articles';
+  private apiUrl = 'http://localhost:5000/articles';
 
   constructor(private http: HttpClient) { }
 
-  getArticles(): Observable<Article[]> {
-    return this.http.get<Article[]>(this.apiUrl);
+  getArticles(): Observable<any> {
+    return this.http.get(this.apiUrl);
   }
 
-  getArticle(id: number): Observable<Article> {
-    return this.http.get<Article>(`${this.apiUrl}/${id}`);
-  }
-
-  addArticle(article: Article): Observable<Article> {
-    return this.http.post<Article>(this.apiUrl, article);
-  }
-
-  updateArticle(id: number, article: Article): Observable<Article> {
-    return this.http.put<Article>(`${this.apiUrl}/${id}`, article);
-  }
-
-  deleteArticle(id: number): Observable<void> {
-    return this.http.delete<void>(`${this.apiUrl}/${id}`);
+  addArticle(article: { title: string; content: string }): Observable<any> {
+    return this.http.post(this.apiUrl, article);
   }
 }
