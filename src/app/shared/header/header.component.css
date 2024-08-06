@@ -1,0 +1,83 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en líneas nuevas */
+}
+
+header h1 {
+    margin: 0;
+    flex: 1; /* Permite que el título ocupe el espacio disponible */
+}
+
+header nav {
+    display: flex;
+    flex: 2; /* Ajusta la flexibilidad del nav */
+    justify-content: flex-end; /* Alinea los enlaces a la derecha */
+}
+
+header nav a {
+    color: #fff;
+    margin-right: 1rem;
+    text-decoration: none;
+}
+
+header nav a:last-child {
+    margin-right: 0; /* Elimina el margen derecho del último enlace */
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+.search-bar {
+    display: flex;
+    flex: 1; /* Permite que la barra de búsqueda ocupe el espacio disponible */
+    justify-content: flex-end; /* Alinea la barra de búsqueda a la derecha */
+}
+
+.search-bar input {
+    padding: 0.5rem;
+    font-size: 1rem;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start; /* Alinea los elementos al principio de la columna */
+    }
+
+    header h1 {
+        margin-bottom: 1rem; /* Añade un margen inferior para separar el título de otros elementos */
+    }
+
+    header nav {
+        justify-content: flex-start; /* Alinea los enlaces a la izquierda */
+        width: 100%; /* Asegura que el nav ocupe el ancho completo */
+        margin-bottom: 1rem; /* Añade un margen inferior para separar el nav de otros elementos */
+    }
+
+    header nav a {
+        margin-right: 1rem;
+    }
+
+    .search-bar {
+        width: 100%; /* Asegura que la barra de búsqueda ocupe el ancho completo */
+        justify-content: flex-start; /* Alinea la barra de búsqueda a la izquierda */
+    }
+
+    .search-bar input {
+        width: calc(100% - 1rem); /* Ajusta el ancho del input */
+    }
+}
